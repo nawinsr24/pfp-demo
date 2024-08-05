@@ -1,0 +1,95 @@
+
+#stars, #stars2, #stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    animation: animStar linear infinite;
+    z-index: -1;
+  }
+
+  #stars {
+    width: 1px;
+    height: 1px;
+    box-shadow: var(--shadows-small);
+    animation-duration: 50s;
+  }
+
+  #stars:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: var(--shadows-small);
+  }
+  
+  #stars2 {
+    width: 2px;
+    height: 2px;
+    box-shadow: var(--shadows-medium);
+    animation-duration: 100s;
+  }
+
+  #stars2:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: var(--shadows-medium);
+  }
+
+  #stars3 {
+    width: 3px;
+    height: 3px;
+    box-shadow: var(--shadows-big);
+    animation-duration: 150s;
+  }
+
+  #stars3:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: var(--shadows-big);
+  }
+
+  #title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 50px;
+    letter-spacing: 10px;
+    margin-top: -60px;
+    padding-left: 10px;
+  }
+  
+  #title span {
+    background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes animStar {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-2000px);
+    }
+  }
+
+
+  /* stars css */
