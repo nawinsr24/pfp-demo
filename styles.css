@@ -194,7 +194,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   width: 100%; /* Adjust width as needed */
-  border-radius:  5px 5px 0 0;
+  border-radius:  3px 3px 0 0;
   background-color: #3e9584; /* Slight hover effect */
   overflow-x:auto;
   overflow-y: hidden;
