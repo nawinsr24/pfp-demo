@@ -1,70 +1,97 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="main.js"></script>
     <title>PANDA PFP</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="section-1.css" />
+    <link rel="stylesheet" href="section-2.css" />
+    <script src="main.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   </head>
-  <body class="c_scroll_2">
-    <div class="heading">
-        <img class="panda_logo" src="./assets/PANDA_clean.svg" alt="">
-        <br>
-        <span class="glow" id="pandaText">$PANDA</span>
-        <br>
-        <br>
-      </div>
-      
-    <div class="maindiv">
-      <div class="submain">
-        <div class="section2">
-            <div class="op">
-                <img class="op-img base-image zoom-animation" src="./assets/p_l.jpg" alt="">
-
-            </div>
-            <img class="holo_img animate overlay-image " src="./assets/holo.png" alt="">
-      
-        <div class="btndiv">
-            <button class="jarvis-button">RANDOM GENERATE</button>
-            <button class="jarvis-button">DOWNLOAD</button>
-
+  <body>
+    <div class="container-fluid">
+      <!-- Header -->
+      <div class="row">
+        <div class="col-12 header">
+          <img class="glow panda_logo" src="./assets/PANDA_clean.svg" alt="" /><br />
+          <span class="glow company-name">$PANDA</span>
         </div>
-    </div>
-        <div class="section1">
-          <div class="palletcard">
+      </div>
 
-            <div class="list">
-                <span class="tab active">BODY</span>
-                <span class="tab">BACKGROUND</span>
-                <span class="tab">HAND</span>
-                <span class="tab">EYES</span>
-                <span class="tab">MOUTH</span>
+      <!-- Main Content -->
+      <div class="row row-full-height">
+        <div class="col-sm-12 col-md-6 section-1">
+          <!-- Top Partition for Images -->
+          <div class="image-container">
+            <div id="content" class="img-fluid top-image up-down">
+              <img
+                id="combined-image"
+                class="glow-image"
+                style="width: 100%; height: 100%"
+                src=""
+                alt="Image 1"
+              />
+            </div>
+            <img
+              src="assets/holo.png"
+              alt="Image 2"
+              class="img-fluid bottom-image animate"
+            />
+          </div>
 
+          <!-- Bottom Partition for Buttons -->
+          <div class="button-container">
+            <button id="rg" class="jarvis-button">RANDOM GENERATE</button>
 
-            </div>
-            <div style="padding: 10px;overflow: auto;" class="c_scroll">
-                <div class="gallery">
-                    <img src="./assets/panda_dummy.png" alt="">
-                    <img src="./assets/panda_dummy.png" alt="">
-                    <img src="./assets/panda_dummy.png" alt="">
-                    <img src="./assets/panda_dummy.png" alt="">
-                    <img src="./assets/panda_dummy.png" alt="">
-                    <img src="./assets/panda_dummy.png" alt="">
-                    <img src="./assets/panda_dummy.png" alt="">
-                    <img src="./assets/panda_dummy.png" alt="">
-                    <img src="./assets/panda_dummy.png" alt="">
-                    <img src="./assets/panda_dummy.png" alt="">
-                    <img src="./assets/panda_dummy.png" alt="">
-    
-            </div>
-            </div>
+            <button id="download-btn" class="jarvis-button">DOWNLOAD</button>
+
        
-          
           </div>
         </div>
-      
-      
+        <div class="col-sm-12 col-md-6 section-2">
+          <!-- Card Container -->
+          <div class="card">
+            <!-- Top Navigation -->
+            <div class="nav-tabs">
+              <button id="bg" class="nav-link active" data-target="bg">
+                BACKGROUND
+              </button>
+              <button id="pose" class="nav-link" data-target="body">
+                BODY
+              </button>
+              <button id="hand" class="nav-link" data-target="hand">
+                HAND
+              </button>
+              <button id="eye" class="nav-link" data-target="eye">EYE</button>
+              <button id="mouth" class="nav-link" data-target="mouth">
+                MOUTH
+              </button>
+            </div>
+
+            <!-- Gallery Containers -->
+            <div id="gid" class="gallery-container">
+              <div class="gallery bg"></div>
+
+              <div class="gallery body"></div>
+              <div class="gallery hand"></div>
+              <div class="gallery eye"></div>
+              <div class="gallery mouth"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

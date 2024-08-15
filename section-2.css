@@ -1,0 +1,95 @@
+.section-2 {
+  height: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.section-2 {
+  padding: 20px;
+  display: flex;
+  justify-content: center; /* Centers the card horizontally */
+  align-items: flex-start; /* Aligns the card at the top */
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%; /* Ensure the card takes full available width */
+  max-width: 1200px; /* Optional: Limit the maximum width for better design */
+}
+
+.nav-tabs {
+  display: flex;
+  flex-wrap: wrap; /* Allows nav items to wrap to the next line */
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  flex: 1 1 auto; /* Allows buttons to grow and shrink as needed */
+  text-align: center;
+  white-space: nowrap; /* Prevents text wrapping */
+}
+button:focus {
+  outline: none !important;
+}
+button {
+  outline: none !important;
+}
+
+.active {
+    background-color: #3e9584!important;
+  border-bottom: 2px solid #3e9584 !important;
+  color: white!important;
+}
+
+.gallery-container {
+    flex: 1 1 auto; /* This div takes up the remaining space */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds */
+}
+
+.gallery {
+    display: grid!important;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))!important; /* Create columns with a minimum width of 150px */
+    grid-auto-rows: 150px!important; /* Set the height of each row */
+    gap: 10px!important; /* Space between items */
+  }
+  
+
+.photoDiv {
+  height: 150px;
+  width: 150px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+
+}
+
+.photoDiv img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+}
+.photoDiv:hover{
+    transform: scale(1.02); /* Slightly zooms the image */
+}
+/* .gallery{
+    display: none;
+}
+

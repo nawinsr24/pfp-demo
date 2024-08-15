@@ -1,0 +1,76 @@
+body {
+    background-color: #010314 !important;
+    padding: 15px 40px;
+  }
+  body,
+  html {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .container-fluid {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .row-full-height {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background: url("./assets/banner_bg.png") center/cover no-repeat,
+      linear-gradient(to bottom, #010314 30%, #3e9584 100%);
+    opacity: 1;
+  }
+  
+  .section-1 {
+    padding: 20px;
+  }
+  
+  .header {
+    border-bottom: 1px solid #000;
+    text-align: center;
+    padding: 20px;
+  }
+  .header img {
+    height: 80px;
+  }
+  .logo {
+    float: left;
+    width: 50px;
+    height: 50px;
+  }
+  .company-name {
+    line-height: 50px;
+    color: white;
+  }
+  
+  .glow {
+    font-size: 40px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 100;
+    letter-spacing: 20px;
+    text-align: center;
+    color: #e5e4e2;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px rgba(44, 108, 98, 0.4),
+      0 0 20px rgba(44, 108, 98, 0.4), 0 0 25px rgba(44, 108, 98, 0.4),
+      0 0 30px rgba(44, 108, 98, 0.4), 0 0 35px rgba(44, 108, 98, 0.4);
+    animation: blinker 6s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0.1;
+    }
+  }
+  
+  @media only screen and (max-width: 900px) {
+    body {
+      padding: 0;
+    }
+  
+    .section-1 {
+      padding: 10px; /* Reduce padding to fit more content */
+    }
+  }
+  
