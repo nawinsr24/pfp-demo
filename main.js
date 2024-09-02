@@ -1,15 +1,17 @@
 const counts = {
-  bg: 2,
-  body: 1,
-  eye: 11,
-  eyeMask: 1,
-  hand: 5,
-  mouth: 12,
+  bg: 7,
+  body: 25,
+  head: 25,
+  eye: 25,
+  eyeMask: 15,
+  hand: 25,
+  mouth: 25,
 };
 
 const selectedItems = {
   bg: 2,
   body: 1,
+  head: 1,
   eye: 3,
   eyeMask: 1,
   hand: 1,
@@ -83,7 +85,8 @@ async function getArrayOrder(data) {
     `assets/bg/${data.bg}.png`,
     `assets/hand/${data.hand}.png`,
     `assets/body/${data.body}.png`,
-    `assets/eye-mask/${data.eyeMask}.png`,
+    `assets/head/${data.head}.png`,
+    // `assets/eye-mask/${data.eyeMask}.png`,
     `assets/eye/${data.eye}.png`,
     `assets/mouth/${data.mouth}.png`,
   ];
@@ -117,10 +120,10 @@ function initializeEventListeners() {
   });
 }
 let loading = false;
-let selectedClass="";
+let selectedClass = "";
 function showGallery(galleryClass) {
-  console.log(loading,selectedClass,galleryClass);
-  
+  console.log(loading, selectedClass, galleryClass);
+
   if (loading || selectedClass == galleryClass) return;
   selectedClass = galleryClass;
 
@@ -161,7 +164,8 @@ async function createPhotoDivs(gallery, gclass) {
         array = [
           `assets/bg/${selectedItems.bg}.png`,
           `assets/body/${i + 1}.png`,
-          `assets/eye-mask/1.png`,
+          `assets/head/${selectedItems.head}.png`,
+          // `assets/eye-mask/1.png`,
           `assets/hand/${selectedItems.hand}.png`,
           `assets/eye/${selectedItems.eye}.png`,
           `assets/mouth/${selectedItems.mouth}.png`,
@@ -170,10 +174,12 @@ async function createPhotoDivs(gallery, gclass) {
       case "hand":
       case "eye":
       case "mouth":
+      case "head":
         array = [
           `assets/bg/${selectedItems.bg}.png`,
           `assets/body/${selectedItems.body}.png`,
-          `assets/eye-mask/1.png`,
+          `assets/head/${gclass === "head" ? i + 1 : selectedItems.head}.png`,
+          // `assets/eye-mask/1.png`,
           `assets/hand/${gclass === "hand" ? i + 1 : selectedItems.hand}.png`,
           `assets/eye/${gclass === "eye" ? i + 1 : selectedItems.eye}.png`,
           `assets/mouth/${
@@ -182,6 +188,7 @@ async function createPhotoDivs(gallery, gclass) {
         ];
         break;
     }
+    console.log(array);
 
     const promise = getImgSrc(array).then((imgSrc) => {
       const photoDiv = document.createElement("div");
@@ -202,10 +209,11 @@ async function createPhotoDivs(gallery, gclass) {
   }
 
   await Promise.all(promises);
-  loading=false
+  loading = false;
 }
 
 function photoClicked(type, index) {
+  alert(type)
   selectedItems[type] = index + 1;
   setMainImage();
 }
@@ -238,7 +246,8 @@ function setRgen() {
     return Math.floor(Math.random() * maxValue) + 1;
   }
   selectedItems.bg = rg(counts.bg);
-  selectedItems.hand = rg(counts.hand);
+  selectedItems.body = rg(counts.body);
+  selectedItems.head = rg(counts.head);
   selectedItems.eye = rg(counts.eye);
   selectedItems.mouth = rg(counts.mouth);
   selectedItems.hand = rg(counts.hand);
