@@ -71,6 +71,17 @@ body {
   
     .section-1 {
       padding: 10px; /* Reduce padding to fit more content */
+      height: auto!important;
+    }
+    .section-2 {
+      padding: 10px; /* Reduce padding to fit more content */
+      height: auto!important;
+    }
+    .photoDiv{
+      height: 100px !important;
+      width: 100px !important;
     }
   }
+  
+
   

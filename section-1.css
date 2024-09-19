@@ -80,6 +80,7 @@
 
     .image-container {
         margin-top: 0; /* Remove margin to maximize space */
+        flex-grow: 0;
     }
 
     .button-container {
