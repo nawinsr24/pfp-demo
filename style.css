@@ -71,11 +71,11 @@ html {
 
   .section-1 {
     padding: 10px; /* Reduce padding to fit more content */
-    height: auto !important;
+    height: auto!important;
   }
   .section-2 {
     padding: 10px; /* Reduce padding to fit more content */
-    height: 700px !important;
+    height: 500px!important;
   }
   .gallery {
     display: grid !important;
