@@ -1,11 +1,11 @@
 const counts = {
   bg: 7,
-  body: 25,
-  head: 25,
-  eye: 25,
+  body: 5,
+  head: 1,
+  eye: 7,
   eyeMask: 15,
-  hand: 25,
-  mouth: 25,
+  hand: 6,
+  mouth: 3,
 };
 
 const selectedItems = {
@@ -86,9 +86,10 @@ async function getArrayOrder(data) {
     `assets/hand/${data.hand}.png`,
     `assets/body/${data.body}.png`,
     `assets/head/${data.head}.png`,
-    // `assets/eye-mask/${data.eyeMask}.png`,
     `assets/eye/${data.eye}.png`,
     `assets/mouth/${data.mouth}.png`,
+    // `assets/eye-mask/.png`,
+
   ];
 }
 
@@ -163,10 +164,10 @@ async function createPhotoDivs(gallery, gclass) {
       case "body":
         array = [
           `assets/bg/${selectedItems.bg}.png`,
+          `assets/hand/${selectedItems.hand}.png`,
           `assets/body/${i + 1}.png`,
           `assets/head/${selectedItems.head}.png`,
-          // `assets/eye-mask/1.png`,
-          `assets/hand/${selectedItems.hand}.png`,
+          `assets/eye-mask/1.png`,
           `assets/eye/${selectedItems.eye}.png`,
           `assets/mouth/${selectedItems.mouth}.png`,
         ];
@@ -177,10 +178,10 @@ async function createPhotoDivs(gallery, gclass) {
       case "head":
         array = [
           `assets/bg/${selectedItems.bg}.png`,
+          `assets/hand/${gclass === "hand" ? i + 1 : selectedItems.hand}.png`,
           `assets/body/${selectedItems.body}.png`,
           `assets/head/${gclass === "head" ? i + 1 : selectedItems.head}.png`,
-          // `assets/eye-mask/1.png`,
-          `assets/hand/${gclass === "hand" ? i + 1 : selectedItems.hand}.png`,
+          `assets/eye-mask/1.png`,
           `assets/eye/${gclass === "eye" ? i + 1 : selectedItems.eye}.png`,
           `assets/mouth/${
             gclass === "mouth" ? i + 1 : selectedItems.mouth
@@ -213,7 +214,6 @@ async function createPhotoDivs(gallery, gclass) {
 }
 
 function photoClicked(type, index) {
-  alert(type)
   selectedItems[type] = index + 1;
   setMainImage();
 }
